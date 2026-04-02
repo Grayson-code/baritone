@@ -89,10 +89,16 @@ public interface IBaritone {
     IGetToBlockProcess getGetToBlockProcess();
 
     /**
-     * @return The {@link IElytraProcess} instance
-     * @see IElytraProcess
+     * @return The {@link IBlockScanProcess} instance
+     * @see IBlockScanProcess
      */
-    IElytraProcess getElytraProcess();
+    IBlockScanProcess getBlockScanProcess();
+
+    /**
+     * @return The {@link IAgenticBuilderProcess} instance
+     * @see IAgenticBuilderProcess
+     */
+    IAgenticBuilderProcess getAgenticBuilderProcess();
 
     /**
      * @return The {@link IWorldProvider} instance

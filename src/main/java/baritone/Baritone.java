@@ -79,7 +79,8 @@ public class Baritone implements IBaritone {
     private final ExploreProcess exploreProcess;
     private final FarmProcess farmProcess;
     private final InventoryPauserProcess inventoryPauserProcess;
-    private final IElytraProcess elytraProcess;
+    private final BlockScanProcess blockScanProcess;
+    private final AgenticBuilderProcess agenticBuilderProcess;
 
     private final PathingControlManager pathingControlManager;
     private final SelectionManager selectionManager;
@@ -121,8 +122,10 @@ public class Baritone implements IBaritone {
             this.builderProcess          = this.registerProcess(BuilderProcess::new);
             this.exploreProcess          = this.registerProcess(ExploreProcess::new);
             this.farmProcess             = this.registerProcess(FarmProcess::new);
+            this.blockScanProcess        = this.registerProcess(BlockScanProcess::new);
+            this.agenticBuilderProcess   = this.registerProcess(AgenticBuilderProcess::new);
             this.inventoryPauserProcess  = this.registerProcess(InventoryPauserProcess::new);
-            this.elytraProcess           = this.registerProcess(ElytraProcess::create);
+            this.registerProcess(PlayerDetectionPauserProcess::new);
             this.registerProcess(BackfillProcess::new);
         }
 
@@ -208,6 +211,16 @@ public class Baritone implements IBaritone {
 
     public InventoryPauserProcess getInventoryPauserProcess() {
         return this.inventoryPauserProcess;
+    }
+
+    @Override
+    public BlockScanProcess getBlockScanProcess() {
+        return this.blockScanProcess;
+    }
+
+    @Override
+    public AgenticBuilderProcess getAgenticBuilderProcess() {
+        return this.agenticBuilderProcess;
     }
 
     @Override
