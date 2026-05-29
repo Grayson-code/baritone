@@ -75,7 +75,7 @@ Tune scan behavior (default radius, max radius, logging verbosity):
 #set blockScanLogEachFind false
 ```
 
-# Agentic builder
+# Autonomous builder
 ### Via Chat Commands
 
 Builds schematics autonomously by gathering, crafting, and smelting required materials.
